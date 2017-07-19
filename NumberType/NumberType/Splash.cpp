@@ -10,6 +10,7 @@ void Splash::RunningSplash()
 {
 	do
 	{
+		Sleep(500);
 		system("cls");
 		std::cout << m_title + "\n";
 		if (m_ShowFlashText == true)
@@ -21,7 +22,6 @@ void Splash::RunningSplash()
 		{
 			m_ShowFlashText = true;
 		}
-		Sleep(5000);
 		if (GetKeyState(VK_RETURN) & 0x8000) { m_KeyPressed = true; } //Stops the loop changeing it to the start game state
 	} while (m_KeyPressed == false);
 
