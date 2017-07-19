@@ -1,5 +1,7 @@
 #include "Game.h"
 #include <iostream>
+#include <Windows.h>
+#include <stdlib.h>
 
 
 Game::Game()
@@ -7,11 +9,12 @@ Game::Game()
 }
 void Game::RunningGame(int timer)
 {
-	for (int i; timer <= 0; i++) 
+	for (int i = 0; timer >= 0; i++) 
 	{
-		std::cout << timer;
-		timer - i;
+		Sleep(1000);
 		system("cls");
+		std::cout << timer;
+		timer -= 1;
 	};
 };
 

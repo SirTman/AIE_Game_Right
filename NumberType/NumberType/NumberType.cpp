@@ -3,6 +3,9 @@
 
 #include "stdafx.h"
 #include <iostream>
+#include <Windows.h>
+#include <stdlib.h>
+
 #include "Splash.h"
 #include "Game.h"
 #include "DiffcultySelect.h"
@@ -17,8 +20,13 @@ int main()
 	DiffcultySelect oDiffcultySelect;
 
 	//Manages all the states
-	oSplash.RunningSplash();
-	oGame.RunningGame(5);
+	bool Restart;
+	do {
+		oSplash.RunningSplash();//Spash Screen
+		oGame.RunningGame(5);//The Game
+		Restart = oGameOverScreen.GameOverManGameOver();//Game Over
+	} while (Restart == true);
+	
 	return 0;
 }
 

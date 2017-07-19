@@ -8,22 +8,24 @@ Splash::Splash()
 }
 void Splash::RunningSplash()
 {
-	do
+	m_KeyPressed = false;
+	for (int i = 0; true; i++)
 	{
-		Sleep(500);
 		system("cls");
 		std::cout << m_title + "\n";
-		if (m_ShowFlashText == true)
+		if (m_ShowFlashText = true)
 		{
 			std::cout << m_flashText;
-			m_ShowFlashText = false;
 		}
-		else
+		
+		//True False Flipper
+		if (i%5)
 		{
-			m_ShowFlashText = true;
+			if (m_ShowFlashText = true){m_ShowFlashText = false;}
+			else { m_ShowFlashText = true; }
 		}
-		if (GetKeyState(VK_RETURN) & 0x8000) { m_KeyPressed = true; } //Stops the loop changeing it to the start game state
-	} while (m_KeyPressed == false);
+		if (GetKeyState(VK_RETURN) & 0x8000) { break; } //Stops the loop changeing it to the start game state
+	} 
 
 };
 
