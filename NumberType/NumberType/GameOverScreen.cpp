@@ -21,7 +21,9 @@ bool GameOverScreen::GameOverManGameOver()
 		{
 			m_OptionTXT = " Yes   [NO]";
 		}
+		std::cout << "Play Agian?\n";
 		std::cout << m_OptionTXT;
+		
 		if (GetKeyState(VK_LEFT) & 0x8000) //Left Arrow Key
 		{ 
 			m_GoingToRestart = true; 

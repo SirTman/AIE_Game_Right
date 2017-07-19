@@ -8,7 +8,7 @@ public:
 	bool GameOverManGameOver();
 	~GameOverScreen();
 private:
-	bool m_GoingToRestart = false;
+	bool m_GoingToRestart = true;
 	std::string m_OptionTXT;
 
 };

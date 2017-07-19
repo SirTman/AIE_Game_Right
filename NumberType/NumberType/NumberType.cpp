@@ -22,9 +22,9 @@ int main()
 	//Manages all the states
 	bool Restart;
 	do {
-		oSplash.RunningSplash();//Spash Screen
-		oGame.RunningGame(5);//The Game
-		Restart = oGameOverScreen.GameOverManGameOver();//Game Over
+		oSplash.RunningSplash(); //Spash Screen
+		oGame.RunningGame(5); //The Game
+		Restart = oGameOverScreen.GameOverManGameOver(); //Game Over
 	} while (Restart == true);
 	
 	return 0;
