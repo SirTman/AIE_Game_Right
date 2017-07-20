@@ -87,13 +87,13 @@ void Game::RunningGame(int Min, int Max)
 				std::cout << "\n" << m_RoundNum << " rounds eh I need to do some more work\n";
 			}
 
-			std::getchar(); std::getchar();
+			while (true) { if (GetKeyState(VK_RETURN) & 0x8000) { break;} } //Wait for input
 			break;
 		}
 		if (m_MaxNumRange == m_MinNumRange) //If the Player is cheating
 		{
 			std::cout << "Wait no! Your cheating\nI'm not going to play anymore";
-			std::getchar(); std::getchar();
+			while (true) { if (GetKeyState(VK_RETURN) & 0x8000) { break; } } //Wait for input
 			break;
 
 		}
