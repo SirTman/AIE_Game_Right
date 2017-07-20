@@ -21,9 +21,15 @@ int main()
 
 	//Manages all the states
 	bool Restart;
+	int MinMax[2];
+	oSplash.RunningSplash(); //Spash Screen
 	do {
-		oSplash.RunningSplash(); //Spash Screen
-		oGame.RunningGame(5); //The Game
+		/* 
+		oDiffcultySelect.RangeSet(); Dificulty //DIffculty Select
+		oGame.RunningGame(oDiffcultySelect.m_MIN, oDiffcultySelect.m_MAX); //The Game 
+		*/
+		
+		oGame.RunningGame(1, 100); //The Game
 		Restart = oGameOverScreen.GameOverManGameOver(); //Game Over
 	} while (Restart == true);
 	
