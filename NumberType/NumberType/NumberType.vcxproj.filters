@@ -77,9 +77,6 @@
     <ClCompile Include="GameOverScreen.cpp">
       <Filter>GameStates\Game Over</Filter>
     </ClCompile>
-    <ClCompile Include="GameState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GameStateManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
