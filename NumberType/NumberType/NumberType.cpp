@@ -6,6 +6,9 @@
 #include <Windows.h>
 #include <stdlib.h>
 
+#include "GameState.h"
+#include "GameStateManager.h"
+
 #include "Splash.h"
 #include "Game.h"
 #include "DiffcultySelect.h"
