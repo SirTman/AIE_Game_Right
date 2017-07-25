@@ -16,18 +16,6 @@
     <Filter Include="GameStates">
       <UniqueIdentifier>{713fbc26-2e71-468e-b239-c4556f776261}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameStates\Splash Screen">
-      <UniqueIdentifier>{94a105e9-f293-4ea8-a949-b34a323e1b4f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameStates\Diffculty Select">
-      <UniqueIdentifier>{0ee4d955-ba8b-4757-bda4-a14595779a48}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameStates\Game">
-      <UniqueIdentifier>{a2f405ad-96df-4c3f-ab40-aa119eeaf7b6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameStates\Game Over">
-      <UniqueIdentifier>{97fb96ac-9edf-44c8-b30f-7871732aef22}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -39,26 +27,11 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Splash.h">
-      <Filter>GameStates\Splash Screen</Filter>
-    </ClInclude>
-    <ClInclude Include="DiffcultySelect.h">
-      <Filter>GameStates\Diffculty Select</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>GameStates\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="GameOverScreen.h">
-      <Filter>GameStates\Game Over</Filter>
-    </ClInclude>
     <ClInclude Include="GameState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameStateManager.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="States\Game.h">
-      <Filter>GameStates\Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -67,18 +40,6 @@
     </ClCompile>
     <ClCompile Include="NumberType.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Splash.cpp">
-      <Filter>GameStates\Splash Screen</Filter>
-    </ClCompile>
-    <ClCompile Include="DiffcultySelect.cpp">
-      <Filter>GameStates\Diffculty Select</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>GameStates\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="GameOverScreen.cpp">
-      <Filter>GameStates\Game Over</Filter>
     </ClCompile>
     <ClCompile Include="GameStateManager.cpp">
       <Filter>Source Files</Filter>

@@ -9,18 +9,18 @@
 #include "GameState.h"
 #include "GameStateManager.h"
 
-#include "Splash.h"
-#include "Game.h"
-#include "DiffcultySelect.h"
-#include "GameOverScreen.h"
-
 int main()
 {
 	//Inisalise all the Class flies
-	Splash oSplash;
-	Game oGame;
-	GameOverScreen oGameOverScreen;
-	DiffcultySelect oDiffcultySelect;
+	
+	GameStateManager ThisGame(4);
+	SplashScreen* splash = new SplashScreen;
+	Game* oGame = new Game;
+	GameOverScreen* GOS = new GameOverScreen;
+	
+	ThisGame.registerState(0, splash);
+	ThisGame.registerState(1, oGame);
+	ThisGame.registerState(2, GOS);
 
 	//Manages all the states
 	bool Restart;
