@@ -4,9 +4,7 @@
 #include <stdlib.h>
 
 
-GameOverScreen::GameOverScreen()
-{
-}
+GameOverScreen::GameOverScreen(){}
 
 bool GameOverScreen::GameOverManGameOver() 
 {
@@ -45,6 +43,4 @@ bool GameOverScreen::GameOverManGameOver()
 	return m_GoingToRestart;
 };
 
-GameOverScreen::~GameOverScreen()
-{
-}
+GameOverScreen::~GameOverScreen(){}

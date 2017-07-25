@@ -57,6 +57,9 @@
     <ClInclude Include="GameStateManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="States\Game.h">
+      <Filter>GameStates\Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

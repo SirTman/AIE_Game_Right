@@ -8,9 +8,7 @@
 #include <algorithm>
 
 
-Game::Game()
-{
-}
+Game::Game(){}
 void Game::RunningGame(int Min, int Max)
 {
 	std::srand((unsigned)time(0));
@@ -107,7 +105,4 @@ void Game::RunningGame(int Min, int Max)
 		}
 	} while (true);
 };
-
-Game::~Game()
-{
-}
+Game::~Game(){}
