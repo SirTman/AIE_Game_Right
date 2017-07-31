@@ -61,9 +61,6 @@ class SplashScreen : public GameState
 
 		virtual void onDraw() 
 		{
-
-			for (int i = 0; true;)
-			{
 				system("cls");
 				std::cout << m_title + "\n";
 				if (m_ShowFlashText == true)
@@ -76,11 +73,8 @@ class SplashScreen : public GameState
 					m_ShowFlashText = true;
 				}
 				//True False Flipper
-				Sleep(1000);
 				if (GetKeyState(VK_RETURN) & 0x8000) { 
-					m_KeyPressed = true;
-					break; } //Stops the loop changeing it to the start game state
-			}
+					m_KeyPressed = true; } //Stops the loop changeing it to the start game state
 		}
 
 	private:
@@ -99,9 +93,11 @@ class Game : public GameState
 		bool m_GameOver = false;
 		virtual ~Game();
 
-		virtual void onUpdate(float deltaTime) {}
-		virtual void onDraw() {}
-		virtual void onDraw(int Min, int Max)
+		virtual void onUpdate(float deltaTime) 
+		{
+		
+		}
+		virtual void onDraw()
 		{
 			std::srand((unsigned)time(0));
 			//Count in Timer
@@ -116,8 +112,8 @@ class Game : public GameState
 			};
 
 			//Game
-			m_MinNumRange = Min;
-			m_MaxNumRange = Max;
+			m_MinNumRange = 1;
+			m_MaxNumRange = 100;
 			do {
 				m_RoundNum++;
 				int range = (m_MaxNumRange - m_MinNumRange) + 1;

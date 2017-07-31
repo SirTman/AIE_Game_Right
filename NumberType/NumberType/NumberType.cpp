@@ -14,7 +14,8 @@ int main()
 {
 	//Inisalise all the Class flies
 	unsigned int NumOfStates = 4;
-	int CurrentGameState = 0;
+	int CurrentGameState = 1;
+	int A_Number = 1;
 	bool PushNew = false;
 
 	GameStateManager ThisGame(NumOfStates);
@@ -26,17 +27,18 @@ int main()
 	ThisGame.registerState(1, theGame);
 	ThisGame.registerState(2, GOS);
 	
-	ThisGame.pushState(CurrentGameState);
-	int A_Number = 1;
-	
 	while (true) 
 	{
-		if (PushNew) { ThisGame.pushState(CurrentGameState);}
+		ThisGame.pushState(CurrentGameState);
 
 		ThisGame.update(A_Number);
 		ThisGame.draw();
-		
-		if (GOS->m_QuitGame == true) {}
+
+
+		if (GOS->m_QuitGame == true) 
+		{ break; }
+		else if (CurrentGameState < 1)
+		{ CurrentGameState = 0; }
 	}
 	system("pause");
 	return 0;

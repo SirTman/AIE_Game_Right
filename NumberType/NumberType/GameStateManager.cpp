@@ -47,6 +47,7 @@ void GameStateManager::update(float deltaTime)
 			m_stateStack.back()->enter();
 
 		//Activate new top
+
 		pushedState->onPushed();
 		m_stateStack.push_back(pushedState);
 		m_stateStack.back()->enter();
