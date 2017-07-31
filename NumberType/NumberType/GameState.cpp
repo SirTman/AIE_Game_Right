@@ -8,7 +8,11 @@
 #include <algorithm>
 #include <string>
 
-SplashScreen::SplashScreen(){}
+SplashScreen::SplashScreen()
+{
+				
+}
+
 SplashScreen::~SplashScreen(){}
 
 Game::Game() {}

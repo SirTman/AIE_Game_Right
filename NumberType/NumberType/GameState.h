@@ -34,18 +34,34 @@ protected:
 
 private:
 	bool m_active = false;
+	
 };
 
 class SplashScreen : public GameState
 {
 	public:
 		SplashScreen();
+		
 		virtual ~SplashScreen();
 
-		virtual void onUpdate(float deltaTime) {}
+		virtual void onPushed() { m_KeyPressed = false; }
+
+		virtual void onExit() {
+			
+
+		}
+
+		virtual void onUpdate(float deltaTime) 
+		{
+			if (m_KeyPressed == true) 
+			{
+				exit();
+			}
+		}
+
 		virtual void onDraw() 
 		{
-			m_KeyPressed = false;
+
 			for (int i = 0; true;)
 			{
 				system("cls");
@@ -61,7 +77,9 @@ class SplashScreen : public GameState
 				}
 				//True False Flipper
 				Sleep(1000);
-				if (GetKeyState(VK_RETURN) & 0x8000) { break; } //Stops the loop changeing it to the start game state
+				if (GetKeyState(VK_RETURN) & 0x8000) { 
+					m_KeyPressed = true;
+					break; } //Stops the loop changeing it to the start game state
 			}
 		}
 

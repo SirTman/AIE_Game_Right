@@ -61,4 +61,6 @@ void GameStateManager::update(float deltaTime)
 
 };
 
-void GameStateManager::draw() {};
+void GameStateManager::draw() {
+	m_stateStack[0]->onDraw();
+};
