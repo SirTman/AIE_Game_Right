@@ -8,34 +8,25 @@
 
 #include "GameState.h"
 #include "GameStateManager.h"
+#include "NumberType.h"
 
 int main()
 {
 	//Inisalise all the Class flies
-	
-	GameStateManager ThisGame(4);
+	unsigned int NumOfStates = 4;
+	GameStateManager ThisGame(NumOfStates);
 	SplashScreen* splash = new SplashScreen;
-	Game* oGame = new Game;
+	Game* theGame = new Game;
 	GameOverScreen* GOS = new GameOverScreen;
 	
 	ThisGame.registerState(0, splash);
-	ThisGame.registerState(1, oGame);
+	ThisGame.registerState(1, theGame);
 	ThisGame.registerState(2, GOS);
-
-	//Manages all the states
-	bool Restart;
-	int MinMax[2];
-	oSplash.RunningSplash(); //Spash Screen
-	do {
-		/* 
-		oDiffcultySelect.RangeSet(); Dificulty //DIffculty Select
-		oGame.RunningGame(oDiffcultySelect.m_MIN, oDiffcultySelect.m_MAX); //The Game 
-		*/
-		
-		oGame.RunningGame(1, 100); //The Game
-		Restart = oGameOverScreen.GameOverManGameOver(); //Game Over
-	} while (Restart == true);
 	
+	ThisGame.pushState(0);
+
+	
+	system("pause");
 	return 0;
 }
 

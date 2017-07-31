@@ -1,4 +1,5 @@
 #pragma once
+#include "GameState.h"
 #include <Windows.h>
 #include <iostream>
 #include <stdlib.h>
@@ -80,7 +81,8 @@ class Game : public GameState
 		bool m_GameOver = false;
 		virtual ~Game();
 
-		virtual void onUpdate(float deltaTime) {};
+		virtual void onUpdate(float deltaTime) {}
+		virtual void onDraw() {}
 		virtual void onDraw(int Min, int Max)
 		{
 			std::srand((unsigned)time(0));
