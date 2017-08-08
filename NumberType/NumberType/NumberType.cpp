@@ -6,33 +6,41 @@
 #include <Windows.h>
 #include <stdlib.h>
 
-#include "Splash.h"
-#include "Game.h"
-#include "DiffcultySelect.h"
-#include "GameOverScreen.h"
+#include "GameState.h"
+#include "GameStateManager.h"
+#include "NumberType.h"
 
 int main()
 {
 	//Inisalise all the Class flies
-	Splash oSplash;
-	Game oGame;
-	GameOverScreen oGameOverScreen;
-	DiffcultySelect oDiffcultySelect;
+	unsigned int NumOfStates = 4;
+	int CurrentGameState = 1;
+	int A_Number = 1;
+	bool PushNew = false;
 
-	//Manages all the states
-	bool Restart;
-	int MinMax[2];
-	oSplash.RunningSplash(); //Spash Screen
-	do {
-		/* 
-		oDiffcultySelect.RangeSet(); Dificulty //DIffculty Select
-		oGame.RunningGame(oDiffcultySelect.m_MIN, oDiffcultySelect.m_MAX); //The Game 
-		*/
-		
-		oGame.RunningGame(1, 100); //The Game
-		Restart = oGameOverScreen.GameOverManGameOver(); //Game Over
-	} while (Restart == true);
+	GameStateManager ThisGame(NumOfStates);
+	SplashScreen* splash = new SplashScreen;
+	Game* theGame = new Game;
+	GameOverScreen* GOS = new GameOverScreen;
 	
+	ThisGame.registerState(0, splash);
+	ThisGame.registerState(1, theGame);
+	ThisGame.registerState(2, GOS);
+	
+	while (true) 
+	{
+		ThisGame.pushState(CurrentGameState);
+
+		ThisGame.update(A_Number);
+		ThisGame.draw();
+
+
+		if (GOS->m_QuitGame == true) 
+		{ break; }
+		else if (CurrentGameState < 1)
+		{ CurrentGameState = 0; }
+	}
+	system("pause");
 	return 0;
 }
 
